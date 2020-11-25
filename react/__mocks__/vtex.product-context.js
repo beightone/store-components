@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 export const ProductContext = React.createContext({
   product: {
@@ -18,3 +18,7 @@ export const ProductContext = React.createContext({
     titleTag: "Billabong Die Cut Loose Fit Short Sleeve Rashguard - Men's",
   },
 })
+
+export const useProduct = () => {
+  return useContext(ProductContext)
+}
