@@ -4,4 +4,6 @@ declare module 'vtex.render-runtime' {
     query?: Record<string, string>
   }
   export const useRuntime: () => Runtime
+  export const ExtensionPoint
+  export const useChildBlock
 }

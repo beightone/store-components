@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+- Migrate `user-address` to TypeScript.
+
 ## [3.132.0] - 2020-11-18
 ### Added
 - New prop `inputType` to `search-bar`.
