@@ -2,23 +2,21 @@
 
 # Product Brand
 
-The `ProductBrand` is a VTEX block that displays either the **name** or the **logo** of a **product's brand**.
+The `product-brand` is a VTEX block exported by the [Store Components app](https://vtex.io/docs/components/all/vtex.store-components/) that displays either the **name** or the **logo** of a **product's brand**.
 
 ![product-brand](https://user-images.githubusercontent.com/52087100/70259346-bb081f80-176c-11ea-84db-5785c45829ce.png)
 
-
 ## Configuration
 
-1. Import the `vtex.product-brand` app to your theme's dependencies in the `manifest.json`, for example:
+1. Add the `vtex.store-components` app as a dependency in your theme's `manifest.json` file:
 
 ```json
   "dependencies: {
-    "vtex.product-brand": "2.x"
+    "vtex.store-components": "3.x"
   }
 ```
 
-2. Add the `product-brand` block to any block below `store.product`(Product template). For example:
-
+2. Add the `product-brand` block to any block below `store.product` (product template). For example:
 
 ```json
   "store.product": {
@@ -38,19 +36,26 @@ The `ProductBrand` is a VTEX block that displays either the **name** or the **lo
   },
 ```
 
-
-### Configuration
-
-| Prop name | Type | Description |
-| --- | --- | --- |
-| `displayMode` | `String` | You should choose between `logo` or `text`. This will define if the product brand will be displayed by name or logo. |
-| `fallbackToText` | `Boolean` |  This prop should only be used when `displayMode` is set to `logo`. It defines what should be done when the Product Brand was set to display a brand logo but no image was registered in the VTEX admin's Catalog. This prop is set as `true` by default, allowing the logo to be replaced with the brand name in those scenarios. When set as `false`, the store will not show the brand name instead of the brand logo. |
-| `height` | `Number` | It sets the logo height. It should only be used when `displayMode` is set to `logo`. |
-| `excludeBrands` | `Array` | The brand names or brand IDs listed in the array will never be displayed by the Brand component. It is usually useful to hide default or test brand names/logos on the store front. |
-| `logoWithLink` | `boolean` | If the brand logo will have a link that leads to the store's brand page (`true`) ou not (`false`) |
-| `brandName` | `String` | The brand name. If this value is not passed, it will be obtained through the product context. |
-| `brandId` | `Number` | The brand id. If this value is not passed, it will be obtained through the product context. |
+| Prop name | Type | Description | Default value | 
+| :-------: | :--: | :---------: | ------------: |
+| `brandName` | `string` | Brand name. If no value is declared, the brand name will be displayed according to the data fetched from the product context. | `undefined` | 
+| `brandId` | `number` | Brand ID. If no value is declared, the brand ID will be displayed according to the data fetched from the product context. | `undefined` | 
+| `displayMode` | `enum` | Defines how the product's brand should be displayed. Possible values are: `text` (displays the name of the product's brand) and `logo`. | `logo` | 
+| `fallbackToText` | `boolean` | Whether the brand name should be displayed in scenarios where no logo image is found in the admin's Catalog (`true`) or not (`false`). *Caution*: This prop should only be used when the `displayMode` prop is set to `logo`. | `true` | 
+| `height` | `number` | Desired height for the logo. *Caution*: This prop should only be used when the `displayMode` prop is set to `logo`. | `100` | 
+| `excludeBrands` | `[string]` | List of brand names or brand IDs that should not be displayed by the Product Brand block. This prop is extremely useful to hide default or test brand names/logos on the store front. | `undefined` | 
+| `logoWithLink` | `boolean` | Whether the brand logo should have a link that leads users to the brand's website (`true`) ou not (`false`). | `false` | 
 
 ## Customization 
 
-In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
+
+| CSS Handles |
+| :---------: |
+| `productBrandContainer` |
+| `productBrandLogo` |
+| `productBrandLogoLink` |
+| `productBrandLogoSpacer` |
+| `productBrandLogoWrapper` |
+| `productBrandName` |
+| `productBrandNameSpacer` |
