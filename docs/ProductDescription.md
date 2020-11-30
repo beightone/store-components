@@ -1,15 +1,12 @@
+📢 Use this project, [contribute](https://github.com/vtex-apps/store-components) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion). 
+
 # Product Description
 
-## Description
-
-`ProductDescription` is a VTEX block that displays the description of a product.
-This Component can be imported and used by any VTEX App.
-
-:loudspeaker: **Disclaimer:** Don't fork this project, use, contribute, or open issue with your feature request.
+The `product-description` is a VTEX block exported by the [Store Components app](https://vtex.io/docs/components/all/vtex.store-components/) that displays the description of a product.
 
 ## Configuration
 
-1. Import the `vtex.store-components` app to your theme's dependencies in the `manifest.json`, for example:
+1. Add the `vtex.store-components` app as a dependency in your theme's `manifest.json` file:
 
 ```json
   "dependencies": {
@@ -17,7 +14,7 @@ This Component can be imported and used by any VTEX App.
   }
 ```
 
-2. Add the `product-description` block to any block below `store.product`(Product template). For example:
+2. Add the `product-description` block to any block below `store.product`(product template). For example:
 
 ```json
   "store.product": {
@@ -32,12 +29,10 @@ This Component can be imported and used by any VTEX App.
   }
 ```
 
-### Configuration
-
-| Prop name         | Type      | Description                                                                                                                                                                          | Default     |
-| ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| `collapseContent` | `Boolean` | If true, whenever the product description is too big, it will collapse and show a "Show More" button. When false, it will never collapse and will always show the whole description. | `true`      |
-| `title`           | `string`  | Defines a custom title for the description section.                                                                                                                                  | `undefined` |
+| Prop name | Type | Description | Default value |
+| :-------: | :--: | :---------: | :-----------: |
+| `title` | `string` | Custom title for the description section. | `undefined` |
+| `collapseContent` | `boolean` | Whether the description should always be fully displayed, regardless of its number of characters (`true`) or not (`false`) i.e. it should collapse and display a `Show More` button instead. | `true` |
 
 ## Customization
 
